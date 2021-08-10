@@ -1,5 +1,9 @@
-import { NgModule } from '@angular/core';
+import { LOCALE_ID, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+
+import { registerLocaleData } from '@angular/common';
+import localeFr from '@angular/common/locales/fr';
+registerLocaleData(localeFr, 'fr');
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -14,6 +18,10 @@ import { CarItemComponent } from './cars-list/car-item/car-item.component';
 import { TpComponent } from './tp/tp.component';
 import { VoitureComponent } from './tp/voiture/voiture.component';
 import { FormsModule } from '@angular/forms';
+import { ReservationComponent } from './tp/reservation/reservation.component';
+import { DriversItemComponent } from './drivers-list/drivers-item/drivers-item.component';
+import { RestoService } from './service/resto.service';
+import { BananeService } from './service/banane.service';
 
 @NgModule({
   declarations: [
@@ -28,13 +36,15 @@ import { FormsModule } from '@angular/forms';
     CarItemComponent,
     TpComponent,
     VoitureComponent,
+    ReservationComponent,
+    DriversItemComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule
   ],
-  providers: [],
+  providers: [{provide: LOCALE_ID, useValue: "fr-FR"},BananeService, RestoService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

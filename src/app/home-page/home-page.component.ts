@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { RestoService } from '../service/resto.service';
+import { BananeService } from '../service/banane.service';
 
 @Component({
   selector: 'app-home-page',
@@ -7,10 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomePageComponent implements OnInit {
 
-  title:string = "Drive-X"
+  title:string = "Drive-X";
+  fruit:string = this.banane.getFruit();
+  prixResto:number = this.resto.getPrice();
 
   userName:any;
-  constructor() { }
+  constructor(private banane:BananeService,
+              private resto:RestoService) {
+    console.log(banane.getFruit())
+    console.log(this.resto.name)
+  }
 
   ngOnInit(): void {
   }

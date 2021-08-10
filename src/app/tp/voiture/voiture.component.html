@@ -1,4 +1,6 @@
-<h2>{{ voiture.name }}</h2>
+<h2>{{ voiture.name | titlecase }}</h2>
 <p>Pays : {{ voiture.pays }}</p>
 <p>Puissance : {{ voiture.power }} CH</p>
 <p>Performance 0 à 100 km/h : {{ voiture.perf }} sec</p>
+
+<app-reservation></app-reservation>

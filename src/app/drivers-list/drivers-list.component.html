@@ -1,4 +1,16 @@
-<h1 class="my-5">
-    Nos Pilotes
-</h1>
+
+    <h1>{{ title }}</h1>
+
+
+    <div  class=" d-flex justify-content-center">
+        <div  style="width: 40%;" class=" m-2 border-warning text-center"> <app-drivers-item  *ngFor="let oneDriver of drivers" [pilote]="oneDriver"></app-drivers-item></div>
+        
+    </div>
+   
+    
+    
+
+
+
+
 

@@ -1,0 +1,25 @@
+
+<div [ngClass]="{'border-success': pilote.likeIts > 0,'border-danger': pilote.likeIts < 0}" class="card mb-5 text-center shadow">
+    <div  class="card-header bg-dark text-white ">
+        <h2>{{ pilote.fullName | titlecase }}</h2>
+    </div>
+    <div class="card-body">
+        <img style="width: 100%;" [src]="pilote.coverImage" alt="">
+
+        <p >Origine : {{ pilote.pays }}</p>
+        <p>Discipline : <span [ngClass]="{'badge':true,
+            'badge-info': pilote.category === 'rallye',
+            'badge-success': pilote.category === 'gymkhana',
+            'badge-dark': pilote.category === 'nascar',
+            'badge-danger': pilote.category === 'drag',
+            'badge-secondary': pilote.category === 'formule 1' }">{{ pilote.category }}</span></p>
+            <div>
+                <button (click)="ajout()" class="bg-success p-1 mr-1 rounded"  ><img src="https://img.icons8.com/material-rounded/24/000000/facebook-like--v1.png" alt=""></button>
+                <button (click)="negatif()" class="bg-danger ml-1 p-1 rounded"  ><img src="https://img.icons8.com/material-rounded/24/000000/thumbs-down.png" alt=""></button>
+            </div>
+            {{ pilote.likeIts }}
+            
+    </div>
+    
+    
+</div>
