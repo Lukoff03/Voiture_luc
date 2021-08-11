@@ -14,6 +14,9 @@ export class HomePageComponent implements OnInit {
   fruit:string = this.banane.getFruit();
   prixResto:number = this.resto.getPrice();
 
+  alldrivers = this.data.getBestDrivers(2);
+  allCars = this.data.getPowerfullCars(3);
+
   userName:any;
   constructor(private banane:BananeService,
               private resto:RestoService,

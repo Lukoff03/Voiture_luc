@@ -8,9 +8,15 @@
     </p>
 </div>
 
-<input type="text" [(ngModel)]="userName">
 
-<h1>{{ userName }}</h1>
+<h1>Nos meilleurs pilotes</h1>
+<div  class=" d-flex justify-content-center">
+  <div  style="width: 40%;" class=" m-2 border-warning text-center"> <app-drivers-item  *ngFor="let oneDriver of alldrivers" [pilote]="oneDriver"></app-drivers-item></div>
+  
+</div>
 
-<h2>{{ fruit }}</h2>
-<p>prix conseillé : {{ prixResto }}</p>
+
+<h1>nos meilleures voitures</h1>
+<div class="card-deck  justify-content-center">
+  <app-car-item  *ngFor="let oneCar of allCars" [car]="oneCar" ></app-car-item>
+</div>
