@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { Car } from 'src/app/models/Car';
 import { CarsListComponent } from '../cars-list.component';
 
 @Component({
@@ -8,7 +9,7 @@ import { CarsListComponent } from '../cars-list.component';
 })
 export class CarItemComponent implements OnInit {
 
-  @Input() car:any;
+  @Input() car!: Car;
 
   isBooked:boolean = false;
   btnStyle: string ="";
