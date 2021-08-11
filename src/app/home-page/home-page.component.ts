@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { RestoService } from '../service/resto.service';
 import { BananeService } from '../service/banane.service';
+import { DataService } from '../service/data.service';
 
 @Component({
   selector: 'app-home-page',
@@ -15,7 +16,8 @@ export class HomePageComponent implements OnInit {
 
   userName:any;
   constructor(private banane:BananeService,
-              private resto:RestoService) {
+              private resto:RestoService,
+              private data:DataService) {
     console.log(banane.getFruit())
     console.log(this.resto.name)
   }

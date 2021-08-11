@@ -22,6 +22,7 @@ import { ReservationComponent } from './tp/reservation/reservation.component';
 import { DriversItemComponent } from './drivers-list/drivers-item/drivers-item.component';
 import { RestoService } from './service/resto.service';
 import { BananeService } from './service/banane.service';
+import { DataService } from './service/data.service';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,7 @@ import { BananeService } from './service/banane.service';
     AppRoutingModule,
     FormsModule
   ],
-  providers: [{provide: LOCALE_ID, useValue: "fr-FR"},BananeService, RestoService],
+  providers: [{provide: LOCALE_ID, useValue: "fr-FR"},BananeService, RestoService, DataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
